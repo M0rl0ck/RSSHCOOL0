@@ -23,6 +23,99 @@
     font-style: normal;
     font-weight: 700;
     src: local(''),
-         url('../fonts/inter-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/inter-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+         url('assets/fonts/inter-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('assets/fonts/inter-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
+
+  :root {
+     --color-gold: #bdae82;
+     --color-black: #000000;
+     --color-wight: #ffffff;
+     --font1: 60px;
+     --font2: 20px;   
+  }
+
+  html {
+     scroll-behavior: smooth; 
+   }
+
+   * {
+     box-sizing: border-box;
+   }
+
+   body {
+     background-color: var(--color-black);
+     font-family: Inter;
+     font-style: normal;
+     font-weight: 400;
+     font-size: var(--font2);
+     color: var(--color-wight);
+     line-height: 50px;    
+}
+
+/* HEADER START */
+
+  .container-header {
+     max-width: 1440px;
+     height: 90px;
+     margin: 0 auto;
+     padding: 0 20px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     background: url('assets/img/bg.jpg');
+     background-repeat: no-repeat;
+     background-position: center 0;
+   }
+
+   .icon {
+        width: 50px;
+        height: 50px;
+        fill: var(--color-wight);
+   }
+   .icon:hover {
+        fill: var(--color-gold);
+   }
+
+   .nav {
+        margin-left: auto;
+   }
+
+   .nav-list {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+   }
+
+   .nav-link {
+        text-decoration: none;
+        color: var(--color-wight);
+        padding-right: 30px;
+   }
+
+   .nav-link:hover {
+        color: var(--color-gold);
+   }
+
+   .switch-lng {
+     font-family: Inter;
+     font-style: normal;
+     font-weight: 700;
+     font-size: var(--font2);
+     color: var(--color-wight);
+     line-height: 50px;
+   }
+
+   .en-lng {
+        padding-right: 9px;
+        color: var(--color-gold);
+   }
+
+   .ru-lng {
+        padding-left: 8px;
+   }
+
+   /* HEADER END */
+
+   
