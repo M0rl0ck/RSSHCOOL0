@@ -68,9 +68,14 @@
      background-position: center 0;
    }
 
+   .logo-link {
+        display: flex;
+   }
+
    .icon {
         width: 50px;
         height: 50px;
+        
         fill: var(--color-wight);
    }
    .icon:hover {
@@ -91,7 +96,7 @@
    .nav-link {
         text-decoration: none;
         color: var(--color-wight);
-        padding-right: 30px;
+        padding-right: 31px;
    }
 
    .nav-link:hover {
@@ -118,4 +123,104 @@
 
    /* HEADER END */
 
-   
+   /*MAIN START*/
+
+   /*HERO START*/
+
+   .container {
+        max-width: 1440px;
+        margin: 0 auto;
+   }
+
+   .section-hero {
+        padding-left: 80px;
+        padding-top: 160px;
+        padding-right: 870px;
+        padding-bottom: 328px;
+        background-image: url('./assets/img/bg.jpg');
+        background-position: center -90px;
+        background-repeat: no-repeat;
+   }
+
+   h1 {
+    margin: 0;
+    padding-bottom: 9px;
+    font-family: Merriweather;
+    font-size: var(--font1) ;
+    font-weight: 700;
+    line-height: 120px;
+   }
+
+   .hero-text {
+     font-family: Inter;
+     font-size: var(--font2) ;
+     font-weight: 400;
+     line-height: 40px;
+     margin: 0;
+     padding-bottom: 27px;
+   }
+
+      /* HERO END */
+
+      /* BUTTON START */
+
+
+   .gold-button {
+     cursor: pointer;
+     font-family: Inter;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 20px;
+     line-height: 40px;
+     border: 0;
+     border-radius: 0;
+     background-color: var(--color-gold);
+     width: 220px;
+     height: 55px;
+   }
+
+   .gold-button:hover {
+        color: var(--color-wight);
+   }
+
+   .black-button {
+     cursor: pointer;
+     font-family: inherit;
+     border-color: var(--color-gold);
+     border-radius: 0;
+     background-color: transparent;
+     color: var(--color-gold);
+     width: 220px;
+     height: 55px;
+   }
+
+   .black-button {
+        color: var(--color-wight);
+   }
+
+         /* BUTTON END */
+
+         /* SKILLS START */
+
+         .container-title {
+          width: 49%;
+          margin: 0 auto;
+          background-image: linear-gradient(to top, #000 39px, #bdae82 39px,
+           #bdae82 41px, #000 41px);
+         }
+
+         .title {
+          display: block;
+          padding-top: 100px;
+          margin: 0 280px;
+          font-family: Merriweather;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 40px;
+          line-height: 80px;
+          text-align: center; 
+          color: var(--color-gold);
+          background-color: var(--color-black);
+         }
+
+         /* SKILLS END */
