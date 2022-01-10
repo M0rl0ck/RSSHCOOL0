@@ -200,7 +200,7 @@
 
          /* BUTTON END */
 
-         /* SKILLS START */
+         /* TITLE START */
 
          .container-title {
           width: 49%;
@@ -223,4 +223,72 @@
           background-color: var(--color-black);
          }
 
+         /* TITLE END */
+
+         /* SKILLS START */
+
+         .skills-items {
+          padding-top: 60px;
+          padding-left: 20px;
+          padding-right: 20px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+         }
+
+         .skills-item {
+              width: 320px;
+              background-position: center top;
+              background-repeat: no-repeat;
+              padding-top: 100px;
+              padding-left: 20px;
+              padding-right: 20px;
+         }
+
+         .skills-item:nth-child(1) {
+          background-image: url('./assets/svg/camera.svg');
+          background-size: 62px 50px;
+        }
+
+        .skills-item:nth-child(2) {
+          background-image: url('./assets/svg/video.svg');
+          background-size: 62px 50px;
+        }
+
+        .skills-item:nth-child(3) {
+          background-image: url('./assets/svg/image.svg');
+          background-size: 62px 50px;
+        }
+
+        .skills-item:nth-child(4) {
+          background-image: url('./assets/svg/mic.svg');
+          background-size: 62px 50px;
+        }
+
+        .skills-item h3 {
+          font-family: Inter;
+          font-style: normal;
+          font-weight: bold;
+          font-size: var(--font2);
+          line-height: 40px;
+          text-align: center;
+          margin: 0;
+        }
+
+        .skills-item p {
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 36px; 
+          text-align: center;
+          margin: 0;
+          padding-top: 22px;
+        }
+
          /* SKILLS END */
+
+         /* PORTFOLIO START*/
+
+         
+         /* PORTFOLIO END */
