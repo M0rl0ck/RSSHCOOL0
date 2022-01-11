@@ -145,6 +145,7 @@
    h1 {
     margin: 0;
     padding-bottom: 9px;
+    
     font-family: Merriweather;
     font-size: var(--font1) ;
     font-weight: 700;
@@ -320,6 +321,7 @@
               width: 450px;
               height: 560px;
               background-position: center top;
+              background-repeat: no-repeat;
          }
 
          .foto-item:nth-child(1) {
@@ -355,6 +357,38 @@
          /* PORTFOLIO END */
 
          /* VIDEO START */
+
+         .video-player {
+          width: 1400px;
+          height: 705px;
+          margin: 0 auto;
+          margin-top: 60px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-image: url(assets/img/video-player.jpg);
+          background-size: 1400px 705px;
+         }
+
+         .video-player-button {
+              position: absolute;
+              cursor: pointer;
+              border: 0;
+              background-color: transparent;
+         }
+
+         .video-player-button-icon {
+              width: 130px;
+              height: 130px;
+              fill: var(--color-wight);
+         }
+
+         .video-player-button-icon:hover {
+              fill: var(--color-gold);
+         }
 
          /* VIDEO END */
 
