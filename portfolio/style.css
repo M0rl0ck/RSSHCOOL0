@@ -210,9 +210,11 @@
          }
 
          .title {
-          display: block;
+          width: min-content;
+          margin: 0 auto;
+          padding-left: 20px;
+          padding-right: 20px;
           padding-top: 100px;
-          margin: 0 280px;
           font-family: Merriweather;
           font-style: normal;
           font-weight: bold;
@@ -243,6 +245,7 @@
               padding-top: 100px;
               padding-left: 20px;
               padding-right: 20px;
+              padding-bottom: 9px;
          }
 
          .skills-item:nth-child(1) {
