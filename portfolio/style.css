@@ -185,8 +185,12 @@
 
    .black-button {
      cursor: pointer;
-     font-family: inherit;
-     border-color: var(--color-gold);
+     font-family: Inter;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 20px;
+     line-height: 40px;
+     border: 2px solid var(--color-gold);
      border-radius: 0;
      background-color: transparent;
      color: var(--color-gold);
@@ -194,7 +198,7 @@
      height: 55px;
    }
 
-   .black-button {
+   .black-button:hover {
         color: var(--color-wight);
    }
 
@@ -293,5 +297,75 @@
 
          /* PORTFOLIO START*/
 
+         .container-button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+              padding-top: 60px;
+              padding-bottom: 60px;
+
+         }
+
+         .container-foto {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 25px;
+              row-gap: 25px;
+         }
+
+         .foto-item {
+              width: 450px;
+              height: 560px;
+              background-position: center top;
+         }
+
+         .foto-item:nth-child(1) {
+              background-image: url(assets/img/portfolio-img-0.jpg);
+              background-size: 450px 560px;
+         }
+
+         .foto-item:nth-child(2) {
+          background-image: url(assets/img/portfolio-img-1.jpg);
+          background-size: 450px 560px;
+        }
+
+        .foto-item:nth-child(3) {
+          background-image: url(assets/img/portfolio-img-2.jpg);
+          background-size: 450px 560px;
+        }
+
+        .foto-item:nth-child(4) {
+          background-image: url(assets/img/portfolio-img-3.jpg);
+          background-size: 450px 560px;
+        }
+
+        .foto-item:nth-child(5) {
+          background-image: url(assets/img/portfolio-img-4.jpg);
+          background-size: 450px 560px;
+        }
+
+        .foto-item:nth-child(6) {
+          background-image: url(assets/img/portfolio-img-5.jpg);
+          background-size: 450px 560px;
+        }
          
          /* PORTFOLIO END */
+
+         /* VIDEO START */
+
+         /* VIDEO END */
+
+         /* PRICE START */
+
+         /* PRICE END */
+
+         /* CONTACT START */
+
+         /* CONTACT END */
+
+         /* FOOTER START */
+
+         /* FOOTER END */
