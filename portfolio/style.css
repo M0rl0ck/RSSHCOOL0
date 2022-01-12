@@ -394,6 +394,69 @@
 
          /* PRICE START */
 
+         .container-price {
+              padding-left: 20px;
+              padding-right: 20px;
+              padding-top: 60px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 25px;
+
+         }
+
+         .price-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border: 3px solid var(--color-gold);
+              flex-grow: 1;
+              flex-basis: 300px;
+              padding-bottom: 40px;
+         }
+
+         .price-item h3 {
+          font-family: Merriweather;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 56px;  
+          text-align: center;
+          color: var(--color-wight);
+          margin: 0;
+          padding-top: 40px;
+         }
+
+         .price-item p {
+          margin: 0;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-family: Merriweather;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 48px;
+          text-align: center;
+          color: var(--color-wight);
+
+         }
+
+         .price-item span {
+              display: block;
+              font-family: Inter;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 36px;
+              text-align: center;
+              color: var(--color-wight);
+         }
+
+         .price-text {
+              padding-bottom: 40px;
+         }
+         
+
          /* PRICE END */
 
          /* CONTACT START */
