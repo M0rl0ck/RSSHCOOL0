@@ -540,6 +540,7 @@
               justify-content: space-between;
               align-items: center;
               padding-top: 30px;
+              padding-bottom: 26px;
          }
 
          .rolling-link {
@@ -548,6 +549,7 @@
 
          .icon-container {
               display: flex;
+              list-style: none;
          }
 
          .container-footer span {
