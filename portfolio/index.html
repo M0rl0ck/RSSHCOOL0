@@ -39,7 +39,14 @@
                 </ul>
             </nav>
             <div class="switch-lng">
-                <span class="en-lng">en</span><span>/</span><span class="ru-lng">ru</span>
+                <span class="active-lng">en</span><span class="slash-lng">/</span><span class="not-active-lng">ru</span>
+            </div>
+            <div class="container-hamburger">
+                <div class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
             </div>
         </div>
     </header>
@@ -47,12 +54,14 @@
     <main>
         <div class="container">
             <section class="section-hero">
-                <h1>Alexa Rise</h1>
-                <p class="hero-text">Save sincere emotions,
-                     romantic feelings and happy moments of life
-                      together with professional photographer Alexa Rise
-                </p>
-                <button class="gold-button">Hire me</button>
+                <div class="hero">
+                    <h1>Alexa Rise</h1>
+                    <p class="hero-text">Save sincere emotions,
+                         romantic feelings and happy moments of life
+                          together with professional photographer Alexa Rise
+                    </p>
+                    <button class="gold-button">Hire me</button>
+                </div>
             </section>
             <section class="section-skills">
                 <div class="container-title">
@@ -154,7 +163,7 @@
             <section class="section-contact">
                <div class="container-contact-items">
                  <h2 id="contacts">Contact me</h2>
-                   <form action="index.js">
+                   <form action="index.js" class="contact-form">
                         <input type="email" placeholder="E-mail">
                         <input type="tel" placeholder="Phone">
                         <textarea name="Message" cols="30" rows="10" placeholder="Message"></textarea>
