@@ -1,6 +1,24 @@
-console.log('1 Вёрстка валидная +10 \n2 Вёрстка семантическая +20');
-console.log('<header>, <main>, <footer> +2\nшесть элементов <section> (по количеству секций) +2\nтолько один заголовок <h1> +2\nпять заголовков <h2> +2\nодин элемент <nav> +2\nдва списка ul > li > a +2/nдесять кнопок <button> +2\nдва инпута: <input type="email"> и <input type="tel"> +2\nодин элемент <textarea> +2\nтри атрибута placeholder +2')
-console.log('3 Вёрстка соответствует макету +48\nблок <header> +6\nсекция hero +6\nсекция skills +6\nсекция portfolio +6\nсекция video +6\nсекция price +6\nсекция contacts +6\nблок <footer> +6');
-console.log('4 Требования к css + 12\nдля построения сетки используются флексы или гриды +2\nпри уменьшении масштаба страницы браузера вёрстка размещается по центру, а не сдвигается в сторону +2\nфоновый цвет тянется на всю ширину страницы +2\nиконки добавлены в формате .svg. +2\nизображения добавлены в формате .jpg +2\nесть favicon +2');
-console.log('Интерактивность, реализуемая через css +20\nплавная прокрутка по якорям +5\nссылки в футере ведут на гитхаб автора проекта и на страницу курса https://rs.school/js-stage0/ +5\nинтерактивность включает в себя не только изменение внешнего вида курсора, например, при помощи свойства cursor: pointer, но и другие визуальные эффекты, например, изменение цвета фона или цвета шрифта. Если в макете указаны стили при наведении и клике, для элемента указываем эти стили. Если в макете стили не указаны, реализуете их по своему усмотрению, руководствуясь общим стилем макета +5\nобязательное требование к интерактивности: плавное изменение внешнего вида элемента при наведении и клике не влияющее на соседние элементы +5\n');
-console.log('Total score: 110/100')
+console.log(`Вёрстка соответствует макету. Ширина экрана 768px +48\n
+Ни на одном из разрешений до 320px включительно не появляется горизонтальная 
+полоса прокрутки.\nВесь контент страницы при этом сохраняется: не обрезается 
+и не удаляется +15\n
+На ширине экрана 768рх и меньше реализовано адаптивное меню +22\n
+Total score: 85 / 75`);
+
+
+const hamburger = document.querySelector('.hamburger');
+const adaptivemenu = document.querySelector('.nav');
+
+const openMenu = () => {
+    hamburger.classList.toggle('hamburger-active');
+    adaptivemenu.classList.toggle('open-menu');
+}
+const closeMenu = (event) => {
+    if (event.target.classList.contains('nav-link')) {
+        hamburger.classList.remove('hamburger-active');
+        adaptivemenu.classList.remove('open-menu');
+    }
+}
+
+hamburger.addEventListener('click', openMenu);
+adaptivemenu.addEventListener('click', closeMenu);
