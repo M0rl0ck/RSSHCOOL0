@@ -40,5 +40,52 @@ function changeImage(event) {
   containerButton.addEventListener('click', changeImage);
 
 //   TRANSLATION
-const langList = document.dataset.i18n;
-console.log(langList);
+let actuvLang = '';
+const engLang = document.querySelector('.en-lng');
+const rusLang = document.querySelector('.ru-lng');
+
+function getTranslate(lang) {
+    if (lang === 'ru') {
+        engLang.classList.remove('active-lng');
+        rusLang.classList.add('active-lng');
+    } else if (lang === 'en') {
+        engLang.classList.add('active-lng');
+        rusLang.classList.remove('active-lng');
+    }
+    const translaitList = document.querySelectorAll('[data-i18n]');
+    translaitList.forEach(elem => {
+        if (elem.placeholder) {
+            elem.placeholder = i18Obj[lang][elem.dataset.i18n];
+            elem.textContent = ''
+        }
+    elem.textContent = i18Obj[lang][elem.dataset.i18n];
+    });
+}
+
+function switchLangRu() {
+    actuvLang = 'ru';
+    getTranslate('ru');
+}
+
+function switchLangEn() {
+    actuvLang = 'en';
+    getTranslate('en');
+}
+
+engLang.addEventListener('click', switchLangEn);
+rusLang.addEventListener('click', switchLangRu);
+// getTranslate('ru')
+
+// PRELOAD
+
+function preloadImages() {
+    const seasons = ['winter', 'spring', 'summer', 'autumn'];
+    seasons.forEach(seasn => {
+        for(let i = 1; i <= 6; i++) {
+            const img = new Image();
+            img.src = `./assets/img/${seasn}/${i}.jpg`;
+          }
+    })
+   
+  }
+  preloadImages();

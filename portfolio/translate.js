@@ -37,6 +37,9 @@ const i18Obj = {
     'price-description-3-span-5': 'Make up, visage, hairstyle',
     'order': 'Order shooting',
     'contact-me': 'Contact me',
+    'input-1': 'E-mail',
+    'input-2': 'Phone',
+    'text-area': 'Message',
     'send-message': 'Send message'
   },
   'ru': {
@@ -77,6 +80,9 @@ const i18Obj = {
     'price-description-3-span-5': 'Макияж, визаж, прическа',
     'order': 'Заказать съемку',
     'contact-me': 'Свяжитесь со мной',
+    'input-1': 'Почта',
+    'input-2': 'Телефон',
+    'text-area': 'Сообщение',
     'send-message': 'Отправить'
   }
 }
