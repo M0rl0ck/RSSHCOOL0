@@ -39,7 +39,12 @@
                 </ul>
             </nav>
             <div class="switch-lng">
-                <span class="active-lng">en</span><span class="slash-lng">/</span><span class="not-active-lng">ru</span>
+                <span class="en-lng active-lng">en</span><span class="slash-lng">/</span><span class="ru-lng">ru</span>
+            </div>
+            <div class="theme">
+                <svg class="icon">
+                    <use xlink:href="./assets/svg/sprite.svg#moon"></use>
+                </svg>
             </div>
             <div class="container-hamburger">
                 <div class="hamburger">
@@ -55,59 +60,59 @@
         <div class="container">
             <section class="section-hero">
                 <div class="hero">
-                    <h1>Alexa Rise</h1>
-                    <p class="hero-text">Save sincere emotions,
+                    <h1 data-i18n="hero-title">Alexa Rise</h1>
+                    <p class="hero-text" data-i18n="hero-text">Save sincere emotions,
                          romantic feelings and happy moments of life
                           together with professional photographer Alexa Rise
                     </p>
-                    <button class="gold-button">Hire me</button>
+                    <button class="gold-button" data-i18n="hire">Hire me</button>
                 </div>
             </section>
             <section class="section-skills">
                 <div class="container-title">
-                        <h2 class="title" id="skills">Skills</h2>
+                        <h2 class="title" id="skills" data-i18n="skills">Skills</h2>
                 </div>
                 <div class="skills-items">
                     <div class="skills-item">
-                        <h3>Digital photography</h3>
-                        <p>High-quality photos in the studio and on the nature</p>
+                        <h3 data-i18n="skill-title-1">Digital photography</h3>
+                        <p data-i18n="skill-text-1">High-quality photos in the studio and on the nature</p>
                     </div>
                     <div class="skills-item">
-                        <h3>Video shooting</h3>
-                        <p>Capture your moments so that they always stay with you</p>
+                        <h3 data-i18n="skill-title-2">Video shooting</h3>
+                        <p data-i18n="skill-text-2">Capture your moments so that they always stay with you</p>
                     </div>
                     <div class="skills-item">
-                        <h3>Retouch</h3>
-                        <p>I strive to make photography surpass reality</p>
+                        <h3 data-i18n="skill-title-3">Retouch</h3>
+                        <p data-i18n="skill-text-3">I strive to make photography surpass reality</p>
                     </div>
                     <div class="skills-item">
-                        <h3>Audio</h3>
-                        <p>Professional sounds recording for video, advertising, portfolio</p>
+                        <h3 data-i18n="skill-title-4">Audio</h3>
+                        <p data-i18n="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
                     </div>
                 </div>
             </section>
             <section class="section">
                 <div class="container-title">
-                    <h2 class="title" id="portfolio">Portfolio</h2>
+                    <h2 class="title" id="portfolio" data-i18n="portfolio">Portfolio</h2>
                 </div>
                 <div class="container-button">
-                    <button class="black-button">Winter</button>
-                    <button class="black-button">Spring</button>
-                    <button class="black-button">Summer</button>
-                    <button class="gold-button">Autumn</button>
+                    <button class="portfolio-button" data-season="winter-foto" data-i18n="winter">Winter</button>
+                    <button class="portfolio-button" data-season="spring-foto" data-i18n="spring">Spring</button>
+                    <button class="portfolio-button" data-season="summer-foto" data-i18n="summer">Summer</button>
+                    <button class="portfolio-button active-button" data-season="autumn-foto" data-i18n="autumn">Autumn</button>
                 </div>
                 <div class="container-foto">
-                    <div class="foto-item"></div>
-                    <div class="foto-item"></div>
-                    <div class="foto-item"></div>
-                    <div class="foto-item"></div>
-                    <div class="foto-item"></div>
-                    <div class="foto-item"></div>
+                    <div class="foto-item autumn-foto"></div>
+                    <div class="foto-item autumn-foto"></div>
+                    <div class="foto-item autumn-foto"></div>
+                    <div class="foto-item autumn-foto"></div>
+                    <div class="foto-item autumn-foto"></div>
+                    <div class="foto-item autumn-foto"></div>
                 </div>
             </section>
             <section class="section">
                 <div class="container-title">
-                    <h2 class="title" id="video">Video</h2>
+                    <h2 class="title" id="video" data-i18n="video">Video</h2>
                 </div>
                 <div class="video-player">
                     <button class="video-player-button">
@@ -119,55 +124,55 @@
             </section>
             <section class="section">
                 <div class="container-title">
-                    <h2 class="title" id="price">Price</h2>
+                    <h2 class="title" id="price" data-i18n="price">Price</h2>
             </div>
             <div class="container-price">
                 <div class="price-item">
                     <h3>Standard</h3>
                     <p>500 $</p>
                     <div class="price-text">
-                        <span>One location</span>
-                        <span>120 photos in color</span>
-                        <span>12 photos in retouch</span>
-                        <span>Readiness 2-3 weeks</span>
-                        <span>Make up, visage</span>
+                        <span data-i18n="price-description-1-span-1">One location</span>
+                        <span data-i18n="price-description-1-span-2">120 photos in color</span>
+                        <span data-i18n="price-description-1-span-3">12 photos in retouch</span>
+                        <span data-i18n="price-description-1-span-4">Readiness 2-3 weeks</span>
+                        <span data-i18n="price-description-1-span-5">Make up, visage</span>
                     </div>
-                    <button class="gold-button">Order shooting</button>
+                    <button class="gold-button" data-i18n="order">Order shooting</button>
                 </div>
                 <div class="price-item">
                     <h3>Premium</h3>
                     <p>700 $</p>
                     <div class="price-text">
-                        <span>One or two locations</span>
-                        <span>200 photos in color</span>
-                        <span>20 photos in retouch</span>
-                        <span>Readiness 1-2 weeks</span>
-                        <span>Make up, visage</span>
+                        <span data-i18n="price-description-2-span-1">One or two locations</span>
+                        <span data-i18n="price-description-2-span-2">200 photos in color</span>
+                        <span data-i18n="price-description-2-span-3">20 photos in retouch</span>
+                        <span data-i18n="price-description-2-span-4">Readiness 1-2 weeks</span>
+                        <span data-i18n="price-description-2-span-5">Make up, visage</span>
                     </div>
-                    <button class="gold-button">Order shooting</button>
+                    <button class="gold-button" data-i18n="order">Order shooting</button>
                 </div>
                 <div class="price-item">
                     <h3>Gold</h3>
                     <p>1000 $</p>
                     <div class="price-text">
-                        <span>Three locations or more</span>
-                        <span>300 photos in color</span>
-                        <span>50 photos in retouch</span>
-                        <span>Readiness 1 week</span>
-                        <span>Make up, visage, hairstyle</span>
+                        <span data-i18n="price-description-3-span-1">Three locations or more</span>
+                        <span data-i18n="price-description-3-span-2">300 photos in color</span>
+                        <span data-i18n="price-description-3-span-3">50 photos in retouch</span>
+                        <span data-i18n="price-description-3-span-4">Readiness 1 week</span>
+                        <span data-i18n="price-description-3-span-5">Make up, visage, hairstyle</span>
                     </div>
-                    <button class="gold-button">Order shooting</button>
+                    <button class="gold-button" data-i18n="order">Order shooting</button>
                 </div>
             </div>
             </section>
             <section class="section-contact">
                <div class="container-contact-items">
-                 <h2 id="contacts">Contact me</h2>
+                 <h2 id="contacts" data-i18n="contact-me">Contact me</h2>
                    <form action="index.js" class="contact-form">
                         <input type="email" placeholder="E-mail">
                         <input type="tel" placeholder="Phone">
                         <textarea name="Message" cols="30" rows="10" placeholder="Message"></textarea>
-                        <button class="gold-button">Send message</button>
+                        <button class="gold-button" data-i18n="send-message">Send message</button>
                    </form>
                </div>
             </section>
@@ -218,6 +223,6 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

@@ -1,11 +1,5 @@
-console.log(`Вёрстка соответствует макету. Ширина экрана 768px +48\n
-Ни на одном из разрешений до 320px включительно не появляется горизонтальная 
-полоса прокрутки.\nВесь контент страницы при этом сохраняется: не обрезается 
-и не удаляется +15\n
-На ширине экрана 768рх и меньше реализовано адаптивное меню +22\n
-Total score: 85 / 75`);
-
-
+import i18Obj from './translate.js';
+// MENU
 const hamburger = document.querySelector('.hamburger');
 const adaptivemenu = document.querySelector('.nav');
 
@@ -22,3 +16,29 @@ const closeMenu = (event) => {
 
 hamburger.addEventListener('click', openMenu);
 adaptivemenu.addEventListener('click', closeMenu);
+
+// PORNFOLIO
+const containerButton = document.querySelector('.container-button');
+const portfolioButton = document.querySelectorAll('.portfolio-button');
+const portfolioFoto = document.querySelectorAll('.foto-item');
+const fotoItemStyle = ['autumn-foto', 'summer-foto', 'spring-foto', 'winter-foto'];
+
+function changeImage(event) {
+    if(event.target.classList.contains('portfolio-button')) {
+        portfolioButton.forEach(item => item.classList.remove('active-button'));
+        event.target.classList.add('active-button');
+        const season = event.target.dataset.season;
+        portfolioFoto.forEach(img => {
+            fotoItemStyle.forEach(fotoStyle => {
+                img.classList.remove(fotoStyle);
+            });
+            img.classList.add(season);
+        })
+    }
+  }
+
+  containerButton.addEventListener('click', changeImage);
+
+//   TRANSLATION
+const langList = document.dataset.i18n;
+console.log(langList);

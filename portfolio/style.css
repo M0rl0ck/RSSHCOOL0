@@ -155,6 +155,7 @@
    }
 
    .switch-lng {
+     padding-right: 20px;
      font-family: Inter;
      font-style: normal;
      font-weight: 700;
@@ -163,19 +164,25 @@
      line-height: 50px;
    }
 
-   .active-lng {
-        color: var(--color-gold);
-        cursor: pointer;
-   }
-
-   .not-active-lng {
+   .en-lng, .ru-lng {
         color: var(--color-wight);
         cursor: pointer;
    }
+
+   .active-lng {
+     color: var(--color-gold);
+
+   }
+
    .slash-lng {
      padding-right: 8px;
      padding-left: 9px;
 
+   }
+
+   .theme {
+        width: 50px;
+        height: 50px;
    }
 
    /* HEADER END */
@@ -244,7 +251,7 @@
         color: var(--color-wight);
    }
 
-   .black-button {
+   .portfolio-button {
      cursor: pointer;
      font-family: Inter;
      font-style: normal;
@@ -260,7 +267,27 @@
      height: 55px;
    }
 
-   .black-button:hover {
+   .portfolio-button:hover {
+        color: var(--color-wight);
+   }
+
+   .portfolio-button.active-button {
+     cursor: pointer;
+     font-family: Inter;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 20px;
+     line-height: 40px;
+     border: 0;
+     border-radius: 0;
+     color: var(--color-black);
+     background-color: var(--color-gold);
+     transition: 0.3s;
+     width: 220px;
+     height: 55px;
+   }
+
+   .portfolio-button.active-button:hover {
         color: var(--color-wight);
    }
 
@@ -381,36 +408,111 @@
               height: 560px;
               background-position: center top;
               background-repeat: no-repeat;
-         }
-
-         .foto-item:nth-child(1) {
-              background-image: url(assets/img/portfolio-img-0.jpg);
               background-size: 450px 560px;
          }
 
-         .foto-item:nth-child(2) {
-          background-image: url(assets/img/portfolio-img-1.jpg);
-          background-size: 450px 560px;
+         /*  AUTUM  */
+
+         .autumn-foto:nth-child(1) {
+              background-image: url(./assets/img/autumn/1.jpg);
+         }
+
+         .autumn-foto:nth-child(2) {
+          background-image: url(./assets/img/autumn/2.jpg);
         }
 
-        .foto-item:nth-child(3) {
-          background-image: url(assets/img/portfolio-img-2.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(3) {
+          background-image: url(./assets/img/autumn/3.jpg);
         }
 
-        .foto-item:nth-child(4) {
-          background-image: url(assets/img/portfolio-img-3.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(4) {
+          background-image: url(./assets/img/autumn/4.jpg);
         }
 
-        .foto-item:nth-child(5) {
-          background-image: url(assets/img/portfolio-img-4.jpg);
-          background-size: 450px 560px;
+       .autumn-foto:nth-child(5) {
+          background-image: url(./assets/img/autumn/5.jpg);
         }
 
-        .foto-item:nth-child(6) {
-          background-image: url(assets/img/portfolio-img-5.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(6) {
+          background-image: url(./assets/img/autumn/6.jpg);
+        }
+
+        /* SUMMER */
+
+       .summer-foto:nth-child(1) {
+          background-image: url(./assets/img/summer/1.jpg);
+        }
+   
+        .summer-foto:nth-child(2) {
+             background-image: url(./assets/img/summer/2.jpg);
+        }
+   
+        .summer-foto:nth-child(3) {
+             background-image: url(./assets/img/summer/3.jpg);
+        }
+   
+        .summer-foto:nth-child(4) {
+             background-image: url(./assets/img/summer/4.jpg);
+        }
+   
+        .summer-foto:nth-child(5) {
+             background-image: url(./assets/img/summer/5.jpg);
+        }
+   
+        .summer-foto:nth-child(6) {
+             background-image: url(./assets/img/summer/6.jpg);
+        }
+
+        /* SPRTNG */
+
+        .spring-foto:nth-child(1) {
+          background-image: url(./assets/img/spring/1.jpg);
+        }
+
+        .spring-foto:nth-child(2) {
+          background-image: url(./assets/img/spring/2.jpg);
+        }
+
+        .spring-foto:nth-child(3) {
+          background-image: url(./assets/img/spring/3.jpg);
+        }
+
+        .spring-foto:nth-child(4) {
+          background-image: url(./assets/img/spring/4.jpg);
+        }
+
+        .spring-foto:nth-child(5) {
+          background-image: url(./assets/img/spring/5.jpg);
+        }
+
+        .spring-foto:nth-child(6) {
+          background-image: url(./assets/img/spring/6.jpg);
+        }
+
+        /* WINTER */
+
+        .winter-foto:nth-child(1) {
+          background-image: url(./assets/img/winter/1.jpg);
+        }
+
+        .winter-foto:nth-child(2) {
+          background-image: url(./assets/img/winter/2.jpg);
+        }
+
+        .winter-foto:nth-child(3) {
+          background-image: url(./assets/img/winter/3.jpg);
+        }
+
+        .winter-foto:nth-child(4) {
+          background-image: url(./assets/img/winter/4.jpg);
+        }
+
+        .winter-foto:nth-child(5) {
+          background-image: url(./assets/img/winter/5.jpg);
+        }
+
+        .winter-foto:nth-child(6) {
+          background-image: url(./assets/img/winter/6.jpg);
         }
          
          /* PORTFOLIO END */
