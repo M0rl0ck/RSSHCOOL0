@@ -40,11 +40,12 @@ function changeImage(event) {
   containerButton.addEventListener('click', changeImage);
 
 //   TRANSLATION
-let actuvLang = '';
+let activeLang = '';
 const engLang = document.querySelector('.en-lng');
 const rusLang = document.querySelector('.ru-lng');
 
 function getTranslate(lang) {
+    activeLang =lang;
     if (lang === 'ru') {
         engLang.classList.remove('active-lng');
         rusLang.classList.add('active-lng');
@@ -63,12 +64,10 @@ function getTranslate(lang) {
 }
 
 function switchLangRu() {
-    actuvLang = 'ru';
     getTranslate('ru');
 }
 
 function switchLangEn() {
-    actuvLang = 'en';
     getTranslate('en');
 }
 
@@ -76,17 +75,36 @@ engLang.addEventListener('click', switchLangEn);
 rusLang.addEventListener('click', switchLangRu);
 
 // THEME
-
+let light = '';
 const themeButton = document.querySelector('.theme-icon');
 const themeItems = document.querySelectorAll('.theme, .nav-link, .container-title, .title, .portfolio-button, .price-item');
 
 function changeTheme() {
+    light === 'black' || light === '' ? light = 'light' : light = 'black';
     themeButton.classList.toggle('active-theme');
     themeItems.forEach(item => {item.classList.toggle('light-theme')});
-    
 }
 
 themeButton.addEventListener('click', changeTheme);
+
+// LOCAL STORAGE
+
+function setLocalStorage() {
+    localStorage.setItem('lang', activeLang);
+    localStorage.setItem('theme', light);
+  }
+  window.addEventListener('beforeunload', setLocalStorage);
+
+  function getLocalStorage() {
+    if (localStorage.getItem('lang')) {
+      const lang = localStorage.getItem('lang');
+      getTranslate(lang);
+    }
+    if (localStorage.getItem('theme') === 'light') {
+        changeTheme();
+    }
+  }
+  window.addEventListener('load', getLocalStorage)
 
 // PRELOAD
 
