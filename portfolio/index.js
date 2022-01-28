@@ -74,7 +74,19 @@ function switchLangEn() {
 
 engLang.addEventListener('click', switchLangEn);
 rusLang.addEventListener('click', switchLangRu);
-// getTranslate('ru')
+
+// THEME
+
+const themeButton = document.querySelector('.theme-icon');
+const themeItems = document.querySelectorAll('.theme, .nav-link, .container-title, .title, .portfolio-button, .price-item');
+
+function changeTheme() {
+    themeButton.classList.toggle('active-theme');
+    themeItems.forEach(item => {item.classList.toggle('light-theme')});
+    
+}
+
+themeButton.addEventListener('click', changeTheme);
 
 // PRELOAD
 
