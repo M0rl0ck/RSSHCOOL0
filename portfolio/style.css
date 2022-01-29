@@ -56,6 +56,11 @@
      line-height: 50px;
 }
 
+body.light-theme {
+     background-color: var(--color-wight);
+     color: var(--color-black);
+}
+
 /* HEADER START */
 
   .container-header {
@@ -155,6 +160,7 @@
    }
 
    .switch-lng {
+     padding-right: 20px;
      font-family: Inter;
      font-style: normal;
      font-weight: 700;
@@ -163,19 +169,45 @@
      line-height: 50px;
    }
 
-   .active-lng {
-        color: var(--color-gold);
-        cursor: pointer;
-   }
-
-   .not-active-lng {
+   .en-lng, .ru-lng {
         color: var(--color-wight);
         cursor: pointer;
    }
+
+   .active-lng {
+     color: var(--color-gold);
+
+   }
+
    .slash-lng {
      padding-right: 8px;
      padding-left: 9px;
 
+   }
+
+   .theme-icon {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        background-image: url(./assets/svg/moon.svg);
+        background-position: center center;
+        background-size: 50px 50px;
+   }
+
+   .theme-icon:hover {
+        background-image: url(./assets/svg/carbon_moon.svg);
+   }
+
+   .theme-icon.active-theme {
+     width: 50px;
+     height: 50px;
+     background-image: url(./assets/svg/sun.svg);
+     background-position: center center;
+     background-size: 50px 50px;
+   }
+
+   .theme-icon.active-theme:hover {
+     background-image: url(./assets/svg/carbon_sun.svg);
    }
 
    /* HEADER END */
@@ -209,6 +241,7 @@
     font-size: var(--font1) ;
     font-weight: 700;
     line-height: var(--font-line1);
+    color: var(--color-wight);
    }
 
    .hero-text {
@@ -218,6 +251,7 @@
      line-height: 40px;
      margin: 0;
      padding-bottom: 27px;
+     color: var(--color-wight);
    }
 
       /* HERO END */
@@ -244,7 +278,7 @@
         color: var(--color-wight);
    }
 
-   .black-button {
+   .portfolio-button {
      cursor: pointer;
      font-family: Inter;
      font-style: normal;
@@ -260,7 +294,44 @@
      height: 55px;
    }
 
-   .black-button:hover {
+   .portfolio-button.light-theme {
+        color: var(--color-black);
+   }
+
+   .portfolio-button:hover {
+        color: var(--color-wight);
+   }
+
+   .portfolio-button.light-theme:hover {
+        color: var(--color-wight);
+        background-color: var(--color-gold);
+   }
+
+   .portfolio-button.active-button {
+     cursor: pointer;
+     font-family: Inter;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 20px;
+     line-height: 40px;
+     border: 0;
+     border-radius: 0;
+     color: var(--color-black);
+     background-color: var(--color-gold);
+     transition: 0.3s;
+     width: 220px;
+     height: 55px;
+   }
+
+   .portfolio-button.active-button.light-theme {
+        color: var(--color-black);
+   }
+
+   .portfolio-button.active-button:hover {
+        color: var(--color-wight);
+   }
+
+   .portfolio-button.active-button.light-theme:hover {
         color: var(--color-wight);
    }
 
@@ -273,6 +344,12 @@
           margin: 0 auto;
           background-image: linear-gradient(to top, #000 39px, #bdae82 39px,
            #bdae82 41px, #000 41px);
+         }
+
+         .container-title.light-theme {
+          background-image: linear-gradient(to top, #fff 39px, #000 39px,
+          #000 41px, #fff 41px);
+
          }
 
          .title {
@@ -289,6 +366,11 @@
           text-align: center; 
           color: var(--color-gold);
           background-color: var(--color-black);
+         }
+
+         .title.light-theme {
+              color: var(--color-black);
+              background-color: var(--color-wight);
          }
 
          /* TITLE END */
@@ -381,36 +463,111 @@
               height: 560px;
               background-position: center top;
               background-repeat: no-repeat;
-         }
-
-         .foto-item:nth-child(1) {
-              background-image: url(assets/img/portfolio-img-0.jpg);
               background-size: 450px 560px;
          }
 
-         .foto-item:nth-child(2) {
-          background-image: url(assets/img/portfolio-img-1.jpg);
-          background-size: 450px 560px;
+         /*  AUTUM  */
+
+         .autumn-foto:nth-child(1) {
+              background-image: url(./assets/img/autumn/1.jpg);
+         }
+
+         .autumn-foto:nth-child(2) {
+          background-image: url(./assets/img/autumn/2.jpg);
         }
 
-        .foto-item:nth-child(3) {
-          background-image: url(assets/img/portfolio-img-2.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(3) {
+          background-image: url(./assets/img/autumn/3.jpg);
         }
 
-        .foto-item:nth-child(4) {
-          background-image: url(assets/img/portfolio-img-3.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(4) {
+          background-image: url(./assets/img/autumn/4.jpg);
         }
 
-        .foto-item:nth-child(5) {
-          background-image: url(assets/img/portfolio-img-4.jpg);
-          background-size: 450px 560px;
+       .autumn-foto:nth-child(5) {
+          background-image: url(./assets/img/autumn/5.jpg);
         }
 
-        .foto-item:nth-child(6) {
-          background-image: url(assets/img/portfolio-img-5.jpg);
-          background-size: 450px 560px;
+        .autumn-foto:nth-child(6) {
+          background-image: url(./assets/img/autumn/6.jpg);
+        }
+
+        /* SUMMER */
+
+       .summer-foto:nth-child(1) {
+          background-image: url(./assets/img/summer/1.jpg);
+        }
+   
+        .summer-foto:nth-child(2) {
+             background-image: url(./assets/img/summer/2.jpg);
+        }
+   
+        .summer-foto:nth-child(3) {
+             background-image: url(./assets/img/summer/3.jpg);
+        }
+   
+        .summer-foto:nth-child(4) {
+             background-image: url(./assets/img/summer/4.jpg);
+        }
+   
+        .summer-foto:nth-child(5) {
+             background-image: url(./assets/img/summer/5.jpg);
+        }
+   
+        .summer-foto:nth-child(6) {
+             background-image: url(./assets/img/summer/6.jpg);
+        }
+
+        /* SPRTNG */
+
+        .spring-foto:nth-child(1) {
+          background-image: url(./assets/img/spring/1.jpg);
+        }
+
+        .spring-foto:nth-child(2) {
+          background-image: url(./assets/img/spring/2.jpg);
+        }
+
+        .spring-foto:nth-child(3) {
+          background-image: url(./assets/img/spring/3.jpg);
+        }
+
+        .spring-foto:nth-child(4) {
+          background-image: url(./assets/img/spring/4.jpg);
+        }
+
+        .spring-foto:nth-child(5) {
+          background-image: url(./assets/img/spring/5.jpg);
+        }
+
+        .spring-foto:nth-child(6) {
+          background-image: url(./assets/img/spring/6.jpg);
+        }
+
+        /* WINTER */
+
+        .winter-foto:nth-child(1) {
+          background-image: url(./assets/img/winter/1.jpg);
+        }
+
+        .winter-foto:nth-child(2) {
+          background-image: url(./assets/img/winter/2.jpg);
+        }
+
+        .winter-foto:nth-child(3) {
+          background-image: url(./assets/img/winter/3.jpg);
+        }
+
+        .winter-foto:nth-child(4) {
+          background-image: url(./assets/img/winter/4.jpg);
+        }
+
+        .winter-foto:nth-child(5) {
+          background-image: url(./assets/img/winter/5.jpg);
+        }
+
+        .winter-foto:nth-child(6) {
+          background-image: url(./assets/img/winter/6.jpg);
         }
          
          /* PORTFOLIO END */
@@ -486,6 +643,10 @@
           padding-top: 40px;
          }
 
+         .price-item.light-theme h3 {
+              color: var(--color-black);
+         }
+
          .price-item p {
           margin: 0;
           padding-top: 20px;
@@ -510,6 +671,10 @@
               text-align: center;
               color: var(--color-wight);
          }
+
+         .price-item.light-theme span {
+              color: var(--color-black);
+         } 
 
          .price-text {
               padding-bottom: 40px;
@@ -596,6 +761,8 @@
               align-items: center;
               padding-top: 30px;
               padding-bottom: 26px;
+              background-color: var(--color-black);
+              color: var(--color-wight);
          }
 
          .rolling-link {
@@ -821,6 +988,14 @@
           
           body {
                overflow-x: hidden; 
+          }
+
+          .nav.light-theme {
+               background-color: var(--color-wight);
+          }
+
+          .nav-link.light-theme {
+               color: var(--color-black);
           }
 
           /* NAV BLOCK START */
