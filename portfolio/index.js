@@ -1,3 +1,9 @@
+console.log(`1 Смена изображений в секции portfolio +25
+2 Перевод страницы на два языка +25\n3 Переключение светлой и тёмной темы +25
+4 Дополнительный функционал: выбранный пользователем язык отображения страницы и
+светлая или тёмная тема сохраняются при перезагрузке страницы +5
+Total score: 80 / 75`);
+
 import i18Obj from './translate.js';
 // MENU
 const hamburger = document.querySelector('.hamburger');
@@ -22,12 +28,13 @@ const containerButton = document.querySelector('.container-button');
 const portfolioButton = document.querySelectorAll('.portfolio-button');
 const portfolioFoto = document.querySelectorAll('.foto-item');
 const fotoItemStyle = ['autumn-foto', 'summer-foto', 'spring-foto', 'winter-foto'];
-
+let activeSeason = ''
 function changeImage(event) {
     if(event.target.classList.contains('portfolio-button')) {
         portfolioButton.forEach(item => item.classList.remove('active-button'));
         event.target.classList.add('active-button');
         const season = event.target.dataset.season;
+        activeSeason = season;
         portfolioFoto.forEach(img => {
             fotoItemStyle.forEach(fotoStyle => {
                 img.classList.remove(fotoStyle);
@@ -35,6 +42,19 @@ function changeImage(event) {
             img.classList.add(season);
         })
     }
+  }
+
+  function startImg(seas) {
+    activeSeason = seas;
+    portfolioButton.forEach(item => {item.classList.remove('active-button');
+     if (item.dataset.season === seas) {
+         item.classList.add('active-button'); }});
+    portfolioFoto.forEach(img => {
+        fotoItemStyle.forEach(fotoStyle => {
+        img.classList.remove(fotoStyle);
+            });
+            img.classList.add(seas);
+        })
   }
 
   containerButton.addEventListener('click', changeImage);
@@ -92,6 +112,7 @@ themeButton.addEventListener('click', changeTheme);
 function setLocalStorage() {
     localStorage.setItem('lang', activeLang);
     localStorage.setItem('theme', light);
+    localStorage.setItem('activeSeason', activeSeason)
   }
   window.addEventListener('beforeunload', setLocalStorage);
 
@@ -103,8 +124,16 @@ function setLocalStorage() {
     if (localStorage.getItem('theme') === 'light') {
         changeTheme();
     }
+
+    if (localStorage.getItem('activeSeason')) {
+
+    const seas = localStorage.getItem('activeSeason');
+
+    if (seas === '') {startImg('autumn-foto');} else {startImg(seas)} 
   }
-  window.addEventListener('load', getLocalStorage)
+  }
+
+  window.addEventListener('load', getLocalStorage);
 
 // PRELOAD
 
