@@ -605,7 +605,7 @@ h1 {
   width: 100%;
   transform: translateY(100%) translateY(-5px);
   transition: 0.3s;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .container-video-player:hover .video-player-controls {
@@ -646,8 +646,9 @@ h1 {
   background-size: 30px 30px;
 }
 
-.video-player-controll-button:hover, .volume-button:hover {
-  background-size: 35px 35px;
+.video-player-controll-button:hover,
+.volume-button:hover {
+  background-size: 40px 40px;
 }
 
 .video-player-controll-button.video-active {
@@ -655,61 +656,99 @@ h1 {
 }
 
 .volume-button {
-     border: none;
-     width: 40px;
-     height: 40px;
-     cursor: pointer;
-     background-color: transparent;
-     background-image: url(./assets/svg/volume.svg);
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: 30px 30px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(./assets/svg/volume.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
 }
 
 .volume-button.video-active {
-     background-image: url(./assets/svg/mute.svg);
+  background-image: url(./assets/svg/mute.svg);
 }
 
 .container-volume {
-     display: flex;
-     position: relative;
-     align-items: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.container-volume-bar {
+  display: flex;
+  height: 35px;
+  justify-content: end;
+  align-items: center;
+  width: 0;
+  left: 0;
+  position: absolute;
+  transition: 0.3s;
 }
 
 .volume-bar {
-     width: 0;
-     height: 20px;
-     left: 0;
-     position: absolute;
-     background: rgba(255, 255, 255, 0.3);
-     transition: .3s;
-     cursor: ew-resize;
+  width: 90%;
+  height: 20px;
+  background-image: linear-gradient(
+    to right,
+    #bdae82 0%,
+    #bdae82 40%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  cursor: ew-resize;
 }
 
-.volume-fill {
-     width: 70%;
-     height: 20px;
-     background-color: var(--color-gold);
+.container-volume:hover .container-volume-bar {
+  width: 320px;
+  left: -320px;
 }
-
-.container-volume:hover .volume-bar {
-     width: 230px;
-     left: -230px;
-}
-
-
 
 .progress-bar {
   width: 100%;
   height: 25px;
-  background: rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(
+    to right,
+    #bdae82 0%,
+    #bdae82 40%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   cursor: ew-resize;
 }
 
 .progress-fill {
-     width: 20%;
-     height: 25px;
-     background-color: var(--color-gold);
+  width: 20%;
+  height: 25px;
+  flex-basis: 40%;
+  background-color: var(--color-gold);
+}
+
+.progress-time {
+  margin-left: 20px;
+}
+
+.container-button-rewind {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.rewind {
+  border: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font2);
+  color: var(--color-wight);
+  line-height: 50px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rewind:hover {
+  color: var(--color-gold);
 }
 
 .controls-batton {
@@ -1164,11 +1203,21 @@ textarea {
   .nav {
     width: 100%;
   }
+
+  .rewind,
+  .progress-time {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 450px) {
   :root {
     --font3: 20px;
+  }
+
+  .container-header {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .foto-item {
@@ -1181,8 +1230,12 @@ textarea {
 
   .container-video-player {
     width: 100%;
-    /* height: 200px; */
     background-size: auto 200px;
+  }
+
+  .rewind,
+  .progress-time {
+    font-size: 10px;
   }
 
   .price-item {
