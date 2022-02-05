@@ -694,8 +694,8 @@ h1 {
   background-image: linear-gradient(
     to right,
     #bdae82 0%,
-    #bdae82 40%,
-    rgba(255, 255, 255, 0.3) 40%,
+    #bdae82 100%,
+    rgba(255, 255, 255, 0.3) 100%,
     rgba(255, 255, 255, 0.3) 100%
   );
   cursor: ew-resize;
