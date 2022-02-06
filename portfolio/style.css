@@ -719,20 +719,15 @@ h1 {
   cursor: ew-resize;
 }
 
-.progress-fill {
-  width: 20%;
-  height: 25px;
-  flex-basis: 40%;
-  background-color: var(--color-gold);
-}
-
 .progress-time {
   margin-left: 20px;
+  user-select: none;
 }
 
 .container-button-rewind {
   margin-right: auto;
   margin-left: 20px;
+  user-select: none;
 }
 
 .rewind {

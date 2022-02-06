@@ -186,7 +186,7 @@ function startVideo(event) {
     video.play();
     videoPlayerButton.classList.add("button-visible-non");
     videoPlayerStartStop.classList.add("video-active");
-    lengthVideo.textContent = Math.floor(video.duration);
+    lengthVideo.textContent = getTime(video.duration);
   } else {
     video.pause();
     videoPlayerButton.classList.remove("button-visible-non");
@@ -194,8 +194,21 @@ function startVideo(event) {
   }
 }
 
+function getTime(time) {
+  let hours = Math.floor(time / 60 / 60);
+  let minutes = Math.floor(time / 60) - hours * 60;
+  let seconds = Math.floor(time % 60);
+  let formatTime = [
+    hours.toString().padStart(1, "0"),
+    minutes.toString().padStart(2, "0"),
+    seconds.toString().padStart(2, "0"),
+  ].join(":");
+  return formatTime;
+}
+
 function udateProgress() {
-  progressVideo.textContent = Math.floor(video.currentTime);
+  let formatTime = getTime(video.currentTime);
+  progressVideo.textContent = formatTime;
   let procent = (video.currentTime / video.duration) * 100;
   progressVideoBar.style.backgroundImage = `linear-gradient(to right, #bdae82 0%,
      #bdae82 ${procent}%, rgba(0, 0, 0, 0.3) ${procent}%, rgba(0, 0, 0, 0.3) 100% )`;
@@ -256,11 +269,11 @@ progressVideoBar.addEventListener("mousemove", (e) => {
     videoRewindBar(e);
   }
 });
-progressVideoBar.addEventListener("mousedown", () => (mouseDown = mouseOver));
+progressVideoBar.addEventListener("mouseover", () => (mouseOver = true));
+progressVideoBar.addEventListener("mousedown", () => (mouseDown = true));
 progressVideoBar.addEventListener("mouseup", () => {
   mouseDown = false;
 });
-progressVideoBar.addEventListener("mouseover", () => (mouseOver = true));
 progressVideoBar.addEventListener("mouseout", () => {
   mouseOver = false;
   mouseDown = false;
