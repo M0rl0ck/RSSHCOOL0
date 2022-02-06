@@ -591,6 +591,7 @@ h1 {
   background-position: center top;
   background-repeat: no-repeat;
   overflow: hidden;
+  user-select: none;
 }
 
 .video-player {
