@@ -1,9 +1,3 @@
-console.log(`1 Смена изображений в секции portfolio +25
-2 Перевод страницы на два языка +25\n3 Переключение светлой и тёмной темы +25
-4 Дополнительный функционал: выбранный пользователем язык отображения страницы и
-светлая или тёмная тема сохраняются при перезагрузке страницы +5
-Total score: 80 / 75`);
-
 import i18Obj from "./translate.js";
 // MENU
 const hamburger = document.querySelector(".hamburger");
@@ -270,7 +264,7 @@ progressVideoBar.addEventListener("mousemove", (e) => {
   }
 });
 progressVideoBar.addEventListener("mouseover", () => (mouseOver = true));
-progressVideoBar.addEventListener("mousedown", () => (mouseDown = true));
+progressVideoBar.addEventListener("mousedown", () => (mouseDown = mouseOver));
 progressVideoBar.addEventListener("mouseup", () => {
   mouseDown = false;
 });
@@ -287,7 +281,6 @@ function volumeRewindBar(event) {
     volume = 0;
   }
   video.volume = volume;
-  console.log(video.volume);
 }
 
 volumeBar.addEventListener("click", volumeRewindBar);
