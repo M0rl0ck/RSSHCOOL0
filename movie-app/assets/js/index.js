@@ -16,7 +16,6 @@ async function getData(url) {
 }
 
 function showData(data) {
-  console.log(data);
   data.results.map((item) => {
     let imgUrlEnd = item.poster_path;
     let imgUrl = imgUrlStart + imgUrlEnd;
@@ -55,7 +54,9 @@ function searchMoove(event) {
   if (event.key === "Enter") {
     let searchUrlEnd = searchBar.value;
     let searchUrl =
-      searchBar.value === "" ? url : searchUrlStart + searchUrlEnd;
+      searchUrlEnd.split(" ").join("") === ""
+        ? url
+        : searchUrlStart + searchUrlEnd;
     main.innerHTML = "";
     getData(searchUrl);
   }
