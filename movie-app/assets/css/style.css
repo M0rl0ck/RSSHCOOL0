@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+.container-search {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #121212;
+}
+
+.input-search {
+  width: 240px;
+  height: 35px;
+  border-radius: 16px;
+  color: yellow;
+  font-size: 20px;
+  border-color: yellow;
+  background-color: #121212;
+}
+
+.input-search:focus {
+  outline: 0;
+  background-color: #302a2a;
+}
+
+::placeholder {
+  font-size: 20px;
+  color: yellow;
+  padding-left: 14px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.poster {
+  width: 300px;
+  margin: 10px;
+  position: relative;
+  background-color: #302a2a;
+  overflow: hidden;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+}
+
+.move-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.move-info h3 {
+  color: yellow;
+
+  font-size: 20px;
+}
+
+.description {
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: all 0.6s;
+  overflow-y: auto;
+  font-size: 20px;
+  color: #000;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px;
+}
+
+.rate p {
+  color: yellowgreen;
+  white-space: nowrap;
+  background-color: #202020;
+  padding: 6px;
+}
+
+.rate p.red {
+  color: red;
+}
+
+.rate p.green {
+  color: green;
+}
+
+.rate p.broun {
+  color: #998529;
+}
+
+.poster:hover .description {
+  transform: translateY(0);
+}
+
+.container-footer {
+  margin: 0 auto;
+  min-height: 140px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: yellow;
+  font-size: 24px;
+  background-color: #121212;
+}
+
+.container-footer span {
+  padding: 6px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: yellow;
+  font-size: 24px;
+}
+
+.footer-link-rs {
+  width: 150px;
+  height: 60px;
+  text-decoration: none;
+  background-image: url(../svg/rs_school_js.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px 50px;
+  transition: 0.5s;
+}
+
+.footer-link-rs:hover {
+  width: 150px;
+  height: 60px;
+  background-image: url(../svg/rs_school_js_hover.svg);
+  background-size: 150px 60px;
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+  fill: yellow;
+  transition: 0.5s;
+}
+.github:hover {
+  fill: yellowgreen;
+  width: 60px;
+  height: 60px;
+}
