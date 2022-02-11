@@ -118,6 +118,7 @@ body {
 
 .container-footer {
   margin: 0 auto;
+  min-height: 140px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -135,4 +136,34 @@ body {
   text-decoration: none;
   color: yellow;
   font-size: 24px;
+}
+
+.footer-link-rs {
+  width: 150px;
+  height: 60px;
+  text-decoration: none;
+  background-image: url(../svg/rs_school_js.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px 50px;
+  transition: 0.5s;
+}
+
+.footer-link-rs:hover {
+  width: 150px;
+  height: 60px;
+  background-image: url(../svg/rs_school_js_hover.svg);
+  background-size: 150px 60px;
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+  fill: yellow;
+  transition: 0.5s;
+}
+.github:hover {
+  fill: yellowgreen;
+  width: 60px;
+  height: 60px;
 }
