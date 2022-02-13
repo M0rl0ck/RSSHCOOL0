@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TETRIS</h1>
+    </header>
+
+
+    <main class="main">
+        <div class="left-container">
+            <p>Records:</p>
+            <p>01:<span>0</span></p>
+            <p>02:<span>0</span></p>
+            <p>03:<span>0</span></p>
+            <p>04:<span>0</span></p>
+            <p>05:<span>0</span></p>
+            <p>06:<span>0</span></p>
+            <p>07:<span>0</span></p>
+            <p>08:<span>0</span></p>
+            <p>09:<span>0</span></p>
+            <p>10:<span>0</span></p>
+        </div>
+        <div class="m-container">
+            <canvas width="320" height="640" class="canvas">
+
+            </canvas>
+
+        </div>
+        <div class="right-container">
+            <p>Score: <span id="score">0</span></p>
+            <p>Lines: <span id="lines">0</span></p>
+            <p>Level: <span id="level">0</span></p>
+
+            <p>Next:</p>
+            <canvas width="128" height="128" id="next" class="next"></canvas>
+
+            <button class="button">Play</button>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <p><span>©</span><span>2022</span></p><a href="https://github.com/M0rl0ck" class="footer-link">
+                <svg class="github">
+                    <use xlink:href="./assets/svg/sprite.svg#github"></use>
+                </svg>
+            </a>
+
+            <a href="https://rs.school/js-stage0/">
+                <p class="footer-link-rs"> </p>
+            </a>
+
+        </div>
+    </footer>
+    <script type="module" src="./assets/js/index.js"></script>
+</body>
+
+</html>
