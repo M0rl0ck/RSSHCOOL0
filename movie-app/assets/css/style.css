@@ -4,6 +4,10 @@
 
 body {
   background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container-search {
@@ -37,6 +41,7 @@ body {
 }
 
 .main {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
