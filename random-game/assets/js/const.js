@@ -1,5 +1,6 @@
 let fild = [];
 const blockSise = 32;
+const counter = 40;
 
 for (let i = 0; i < 20; i++) {
   fild[i] = [];
@@ -188,4 +189,4 @@ const figures = {
   },
 };
 
-export { fild, blockSise, colors, figuresName, figures };
+export { fild, counter, blockSise, colors, figuresName, figures };

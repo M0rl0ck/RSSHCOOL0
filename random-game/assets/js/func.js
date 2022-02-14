@@ -1,4 +1,11 @@
-import { fild, blockSise, colors, figuresName, figures } from "./const.js";
+import {
+  fild,
+  counter,
+  blockSise,
+  colors,
+  figuresName,
+  figures,
+} from "./const.js";
 
 const canvas = document.querySelector(".canvas");
 const canvasNext = document.querySelector(".next-canvas");
@@ -10,6 +17,9 @@ let rAF = null;
 let currentFigure = {};
 
 let nextFigure = {};
+
+let countTime = 0;
+let count = counter; //speed
 
 const getRandom = (min, max) => {
   min = Math.ceil(min);
@@ -92,8 +102,8 @@ const showNext = () => {
   }
 };
 
-const animation = () => {
-  rAF = requestAnimationFrame(animation);
+const mainCycle = () => {
+  rAF = requestAnimationFrame(mainCycle);
   context.clearRect(0, 0, canvas.width, canvas.height);
   for (let r = 0; r < 20; r++) {
     for (let c = 0; c < 10; c++) {
@@ -107,6 +117,15 @@ const animation = () => {
         );
       }
     }
+  }
+
+  if (countTime++ > count) {
+    currentFigure.row++;
+    countTime = 0;
+  }
+  if (!isCanMoove(currentFigure)) {
+    currentFigure.row--;
+    mountFigure(currentFigure);
   }
 };
 
