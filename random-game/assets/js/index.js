@@ -1,4 +1,5 @@
-import { getFigure, genFigure, rotateFigure } from "./func.js";
+import { blockSise } from "./const.js";
+import { startGame } from "./func.js";
 
 const buttonPlay = document.querySelector("button");
 
@@ -13,5 +14,4 @@ const upPlay = () => {
 buttonPlay.addEventListener("mousedown", presPlay);
 buttonPlay.addEventListener("mouseup", upPlay);
 buttonPlay.addEventListener("mouseout", upPlay);
-
-let currentFigure = {};
+buttonPlay.addEventListener("click", startGame);
