@@ -104,9 +104,9 @@ const showNext = () => {
 
 const mountFigure = (obj) => {
   for (let r = 0; r < obj.matrix.length; r++) {
-    for (let c = 0; r < obj.matrix.length; c++) {
+    for (let c = 0; c < obj.matrix.length; c++) {
       if (obj.matrix[r][c]) {
-        fild[obj.row + r][obj.col + c] = obj.index;
+        fild[obj.row + r][obj.col + c] = obj.color;
       }
     }
   }
@@ -138,8 +138,28 @@ const checkFild = () => {
   }
 };
 
+const stopGame = () => {
+  cancelAnimationFrame(rAF);
+  allert("Game Over!");
+};
+
 const mainCycle = () => {
   rAF = requestAnimationFrame(mainCycle);
+
+  if (countTime++ > count) {
+    currentFigure.row++;
+    countTime = 0;
+  }
+  if (!isCanMoove(currentFigure)) {
+    currentFigure.row--;
+    mountFigure(currentFigure);
+
+    checkFild();
+    currentFigure = getFigure();
+    if (!isCanMoove(currentFigure)) {
+      stopGame();
+    }
+  }
   context.clearRect(0, 0, canvas.width, canvas.height);
   for (let r = 0; r < 20; r++) {
     for (let c = 0; c < 10; c++) {
@@ -154,17 +174,30 @@ const mainCycle = () => {
       }
     }
   }
+  context.fillStyle = colors[currentFigure.color];
+  for (let r = 0; r < currentFigure.matrix.length; r++) {
+    for (let c = 0; c < currentFigure.matrix.length; c++) {
+      if (currentFigure.matrix[r][c]) {
+        context.fillRect(
+          (currentFigure.col + c) * blockSise,
+          (currentFigure.row + r) * blockSise,
+          blockSise - 1,
+          blockSise - 1
+        );
+      }
+    }
+  }
+};
 
-  if (countTime++ > count) {
-    currentFigure.row++;
-    countTime = 0;
+const startGame = () => {
+  for (let i = 0; i < 20; i++) {
+    fild[i] = [];
+    for (let j = 0; j < 10; j++) {
+      fild[i][j] = 0;
+    }
   }
-  if (!isCanMoove(currentFigure)) {
-    currentFigure.row--;
-    mountFigure(currentFigure);
-    checkFild();
-    currentFigure = getFigure();
-  }
+  currentFigure = getFigure();
+  rAF = requestAnimationFrame(mainCycle);
 };
 
 export { getFigure, rotateFigure, genFigure, nextFigure, startGame };

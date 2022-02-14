@@ -1,13 +1,6 @@
 let fild = [];
 const blockSise = 32;
-const counter = 40;
-
-for (let i = 0; i < 20; i++) {
-  fild[i] = [];
-  for (let j = 0; j < 10; j++) {
-    fild[i][j] = 0;
-  }
-}
+const counter = 10;
 
 const colors = [
   "white",
