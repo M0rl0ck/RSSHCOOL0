@@ -102,6 +102,42 @@ const showNext = () => {
   }
 };
 
+const mountFigure = (obj) => {
+  for (let r = 0; r < obj.matrix.length; r++) {
+    for (let c = 0; r < obj.matrix.length; c++) {
+      if (obj.matrix[r][c]) {
+        fild[obj.row + r][obj.col + c] = obj.index;
+      }
+    }
+  }
+};
+
+const checkRow = (r) => {
+  for (let c = 0; c < fild[r].length; c++) {
+    if (fild[r][c] === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const checkFild = () => {
+  for (let row = fild.length - 1; row >= 0; ) {
+    if (checkRow(row)) {
+      for (let r = row; curRow > 0; r--) {
+        for (let c = 0; c < fild[0].length; c++) {
+          fild[r][c] = fild[r - 1][c];
+        }
+      }
+      for (let c = 0; c < fild[0].length; c++) {
+        fild[0][c] = 0;
+      }
+    } else {
+      row--;
+    }
+  }
+};
+
 const mainCycle = () => {
   rAF = requestAnimationFrame(mainCycle);
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -126,6 +162,8 @@ const mainCycle = () => {
   if (!isCanMoove(currentFigure)) {
     currentFigure.row--;
     mountFigure(currentFigure);
+    checkFild();
+    currentFigure = getFigure();
   }
 };
 
