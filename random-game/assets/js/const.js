@@ -1,6 +1,6 @@
 let fild = [];
 const blockSise = 32;
-const counter = 10;
+const counter = 18;
 
 const colors = [
   "white",

@@ -23,6 +23,22 @@ let count = counter; //speed
 
 let gameStatus = false;
 
+let score = 0;
+let lines = 0;
+let level = 0;
+let countLines = 0;
+
+const scoreText = document.getElementById("score");
+const linesText = document.getElementById("lines");
+const levelText = document.getElementById("level");
+
+let records = [];
+for (let i = 0; i < 10; i++) {
+  records.push(0);
+}
+
+const recordsText = document.querySelectorAll(".records");
+
 const getRandom = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -141,6 +157,20 @@ const checkRow = (r) => {
   return true;
 };
 
+const changeScore = () => {
+  lines++;
+  countLines++;
+  if (countLines >= 5) {
+    level++;
+    count -= 2;
+    countLines = 0;
+  }
+  score += 10 * (level + 1);
+  scoreText.textContent = score;
+  linesText.textContent = lines;
+  levelText.textContent = level;
+};
+
 const checkFild = () => {
   for (let row = fild.length - 1; row >= 0; ) {
     if (checkRow(row)) {
@@ -152,6 +182,7 @@ const checkFild = () => {
       for (let c = 0; c < fild[0].length; c++) {
         fild[0][c] = 0;
       }
+      changeScore();
     } else {
       row--;
     }
@@ -160,6 +191,13 @@ const checkFild = () => {
 
 const stopGame = () => {
   gameStatus = false;
+  console.log(score);
+  records.push(score);
+  console.log(records);
+  records.sort((a, b) => b - a);
+  records.pop();
+
+  console.log(records);
   cancelAnimationFrame(rAF);
   alert("Game Over!");
 };
@@ -214,6 +252,16 @@ const startGame = () => {
   if (gameStatus) {
     return;
   }
+  for (let i = 0; i < records.length; i++) {
+    recordsText[i].textContent = records[i];
+  }
+  score = 0;
+  lines = 0;
+  level = 0;
+  countLines = 0;
+  scoreText.textContent = score;
+  linesText.textContent = lines;
+  levelText.textContent = level;
   gameStatus = true;
   for (let i = 0; i < 20; i++) {
     fild[i] = [];
