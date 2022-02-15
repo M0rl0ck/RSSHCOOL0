@@ -252,13 +252,17 @@ const mainCycle = () => {
   }
 };
 
+const fillRecords = () => {
+  for (let i = 0; i < records.length; i++) {
+    recordsText[i].textContent = records[i];
+  }
+};
+
 const startGame = () => {
   if (gameStatus) {
     return;
   }
-  for (let i = 0; i < records.length; i++) {
-    recordsText[i].textContent = records[i];
-  }
+  fillRecords();
   score = 0;
   lines = 0;
   level = 0;
@@ -299,4 +303,23 @@ const keyPress = (event) => {
   }
 };
 
-export { getFigure, rotateFigure, genFigure, nextFigure, startGame, keyPress };
+const setLocalStorage = () => {
+  localStorage.setItem("records", records.join(","));
+};
+const getLocalStorage = () => {
+  if (localStorage.getItem("records")) {
+    records = localStorage.getItem("records").split(",");
+    fillRecords();
+  }
+};
+
+export {
+  getFigure,
+  rotateFigure,
+  genFigure,
+  nextFigure,
+  startGame,
+  keyPress,
+  setLocalStorage,
+  getLocalStorage,
+};

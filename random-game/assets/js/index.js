@@ -1,5 +1,10 @@
 import { blockSise } from "./const.js";
-import { startGame, keyPress } from "./func.js";
+import {
+  startGame,
+  keyPress,
+  setLocalStorage,
+  getLocalStorage,
+} from "./func.js";
 
 const buttonPlay = document.querySelector("button");
 
@@ -16,3 +21,6 @@ buttonPlay.addEventListener("mouseup", upPlay);
 buttonPlay.addEventListener("mouseout", upPlay);
 buttonPlay.addEventListener("click", startGame);
 document.addEventListener("keydown", keyPress);
+
+window.addEventListener("beforeunload", setLocalStorage);
+window.addEventListener("load", getLocalStorage);
