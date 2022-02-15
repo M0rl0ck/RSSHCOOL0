@@ -1,5 +1,5 @@
 import { blockSise } from "./const.js";
-import { startGame } from "./func.js";
+import { startGame, keyPress } from "./func.js";
 
 const buttonPlay = document.querySelector("button");
 
@@ -15,3 +15,4 @@ buttonPlay.addEventListener("mousedown", presPlay);
 buttonPlay.addEventListener("mouseup", upPlay);
 buttonPlay.addEventListener("mouseout", upPlay);
 buttonPlay.addEventListener("click", startGame);
+document.addEventListener("keydown", keyPress);

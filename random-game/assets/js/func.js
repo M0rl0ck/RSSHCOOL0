@@ -21,6 +21,8 @@ let nextFigure = {};
 let countTime = 0;
 let count = counter; //speed
 
+let gameStatus = false;
+
 const getRandom = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -68,6 +70,24 @@ const rotateFigure = (obj) => {
   index = index % 4;
   tempObj.figureIndex = index;
   tempObj.matrix = figures[obj.name].kind[index];
+  if (isCanMoove(tempObj)) {
+    return tempObj;
+  }
+  return obj;
+};
+
+const moveDown = (obj) => {
+  let tempObj = Object.assign({}, obj);
+  tempObj.row = tempObj.row + 1;
+  if (isCanMoove(tempObj)) {
+    return tempObj;
+  }
+  return obj;
+};
+
+const moveFigure = (obj, n) => {
+  let tempObj = Object.assign({}, obj);
+  tempObj.col = tempObj.col + n;
   if (isCanMoove(tempObj)) {
     return tempObj;
   }
@@ -124,7 +144,7 @@ const checkRow = (r) => {
 const checkFild = () => {
   for (let row = fild.length - 1; row >= 0; ) {
     if (checkRow(row)) {
-      for (let r = row; curRow > 0; r--) {
+      for (let r = row; r > 0; r--) {
         for (let c = 0; c < fild[0].length; c++) {
           fild[r][c] = fild[r - 1][c];
         }
@@ -139,8 +159,9 @@ const checkFild = () => {
 };
 
 const stopGame = () => {
+  gameStatus = false;
   cancelAnimationFrame(rAF);
-  allert("Game Over!");
+  alert("Game Over!");
 };
 
 const mainCycle = () => {
@@ -190,6 +211,10 @@ const mainCycle = () => {
 };
 
 const startGame = () => {
+  if (gameStatus) {
+    return;
+  }
+  gameStatus = true;
   for (let i = 0; i < 20; i++) {
     fild[i] = [];
     for (let j = 0; j < 10; j++) {
@@ -200,4 +225,26 @@ const startGame = () => {
   rAF = requestAnimationFrame(mainCycle);
 };
 
-export { getFigure, rotateFigure, genFigure, nextFigure, startGame };
+const keyPress = (event) => {
+  if (event.code === "Enter" && !gameStatus) {
+    startGame();
+    return;
+  } else if (!gameStatus) {
+    return;
+  } else {
+    if (event.code === "ArrowUp") {
+      currentFigure = rotateFigure(currentFigure);
+    }
+    if (event.code === "ArrowDown") {
+      currentFigure = moveDown(currentFigure);
+    }
+    if (event.code === "ArrowRight") {
+      currentFigure = moveFigure(currentFigure, 1);
+    }
+    if (event.code === "ArrowLeft") {
+      currentFigure = moveFigure(currentFigure, -1);
+    }
+  }
+};
+
+export { getFigure, rotateFigure, genFigure, nextFigure, startGame, keyPress };
