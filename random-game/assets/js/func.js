@@ -190,16 +190,20 @@ const checkFild = () => {
 };
 
 const stopGame = () => {
+  cancelAnimationFrame(rAF);
   gameStatus = false;
-  console.log(score);
   records.push(score);
-  console.log(records);
   records.sort((a, b) => b - a);
   records.pop();
-
-  console.log(records);
-  cancelAnimationFrame(rAF);
-  alert("Game Over!");
+  context.fillStyle = "black";
+  context.globalAlpha = 0.7;
+  context.fillRect(0, canvas.height / 2 - 40, canvas.width, 80);
+  context.globalAlpha = 1;
+  context.fillStyle = "white";
+  context.font = "36px serif";
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  context.fillText("GAME OVER!", canvas.width / 2, canvas.height / 2);
 };
 
 const mainCycle = () => {
@@ -216,7 +220,7 @@ const mainCycle = () => {
     checkFild();
     currentFigure = getFigure();
     if (!isCanMoove(currentFigure)) {
-      stopGame();
+      return stopGame();
     }
   }
   context.clearRect(0, 0, canvas.width, canvas.height);
