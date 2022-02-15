@@ -6,10 +6,12 @@ header {
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #000;
+  user-select: none;
 }
 
 h1 {
@@ -20,6 +22,7 @@ h1 {
 
 .main {
   padding: 10px;
+  min-height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -38,13 +41,32 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
   padding: 10px;
   border: 2px;
   border-style: solid;
   border-color: yellow;
   color: white;
   font-size: 24px;
+}
+
+.left-container {
+  align-items: flex-start;
+}
+
+.m-container,
+.right-container {
+  align-items: center;
+}
+
+.record {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.records {
+  padding-left: 50px;
+  text-align: end;
 }
 
 canvas {

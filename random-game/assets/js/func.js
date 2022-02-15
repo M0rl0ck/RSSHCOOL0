@@ -267,6 +267,7 @@ const startGame = () => {
   lines = 0;
   level = 0;
   countLines = 0;
+  count = counter;
   scoreText.textContent = score;
   linesText.textContent = lines;
   levelText.textContent = level;
@@ -282,6 +283,9 @@ const startGame = () => {
 };
 
 const keyPress = (event) => {
+  if (event.code === "Escape" && gameStatus) {
+    stopGame();
+  }
   if (event.code === "Enter" && !gameStatus) {
     startGame();
     return;
