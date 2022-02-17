@@ -283,6 +283,7 @@ const startGame = () => {
 };
 
 const keyPress = (event) => {
+  event.preventDefault();
   if (event.code === "Escape" && gameStatus) {
     stopGame();
   }
