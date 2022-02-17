@@ -34,10 +34,13 @@ const levelText = document.getElementById("level");
 
 let records = [];
 for (let i = 0; i < 10; i++) {
-  records.push(0);
+  records.push({ name: "Player", score: 0 });
 }
 
 const recordsText = document.querySelectorAll(".records");
+const nameText = document.querySelectorAll(".name");
+const inputName = document.querySelector(".imput-name");
+let playerName = "Player";
 
 const getRandom = (min, max) => {
   min = Math.ceil(min);
@@ -192,8 +195,8 @@ const checkFild = () => {
 const stopGame = () => {
   cancelAnimationFrame(rAF);
   gameStatus = false;
-  records.push(score);
-  records.sort((a, b) => b - a);
+  records.push({ name: playerName, score: score });
+  records.sort((a, b) => b.score - a.score);
   records.pop();
   context.fillStyle = "black";
   context.globalAlpha = 0.7;
@@ -254,7 +257,8 @@ const mainCycle = () => {
 
 const fillRecords = () => {
   for (let i = 0; i < records.length; i++) {
-    recordsText[i].textContent = records[i];
+    nameText[i].textContent = records[i].name;
+    recordsText[i].textContent = records[i].score;
   }
 };
 
@@ -263,6 +267,11 @@ const startGame = () => {
     return;
   }
   fillRecords();
+  if (inputName.value) {
+    playerName = inputName.value;
+  } else {
+    playerName = "Player";
+  }
   score = 0;
   lines = 0;
   level = 0;
@@ -283,7 +292,6 @@ const startGame = () => {
 };
 
 const keyPress = (event) => {
-  event.preventDefault();
   if (event.code === "Escape" && gameStatus) {
     stopGame();
   }
@@ -293,6 +301,7 @@ const keyPress = (event) => {
   } else if (!gameStatus) {
     return;
   } else {
+    event.preventDefault();
     if (event.code === "ArrowUp") {
       currentFigure = rotateFigure(currentFigure);
     }
@@ -309,11 +318,12 @@ const keyPress = (event) => {
 };
 
 const setLocalStorage = () => {
-  localStorage.setItem("records", records.join(","));
+  localStorage.setItem("records", JSON.stringify(records));
 };
 const getLocalStorage = () => {
   if (localStorage.getItem("records")) {
-    records = localStorage.getItem("records").split(",");
+    let rec = localStorage.getItem("records");
+    records = JSON.parse(rec);
     fillRecords();
   }
 };

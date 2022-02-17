@@ -58,12 +58,32 @@ p {
   align-items: center;
 }
 
+.imput-name {
+  background-color: #000;
+  border-style: solid;
+  border-color: yellow;
+  border: 1;
+  width: 200px;
+  height: 55px;
+  color: yellow;
+  border-radius: 15px;
+}
+
+.imput-name:focus {
+  outline: 0;
+}
+
 .record {
   min-width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.name {
+  min-width: 200px;
+}
+
 .records {
   padding-left: 50px;
   text-align: end;
