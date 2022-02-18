@@ -207,6 +207,7 @@ const stopGame = () => {
   context.textAlign = "center";
   context.textBaseline = "middle";
   context.fillText("GAME OVER!", canvas.width / 2, canvas.height / 2);
+  fillRecords();
 };
 
 const mainCycle = () => {
@@ -266,8 +267,7 @@ const startGame = () => {
   if (gameStatus) {
     return;
   }
-  fillRecords();
-  if (inputName.value) {
+  if (inputName.value.split(" ").join("")) {
     playerName = inputName.value;
   } else {
     playerName = "Player";
