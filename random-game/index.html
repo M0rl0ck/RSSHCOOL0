@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TETRIS</h1>
+    </header>
+
+
+    <main class="main">
+        <div class="left-container">
+            <input type="text" autofocus placeholder="Enter your name" class="imput-name">
+
+            <p>Records:</p>
+
+            <div class="record">
+                <p class="name">Player 01:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 02:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 03:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 04:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 05:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 06:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 07:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 08:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 09:</p> <span class="records">0</span>
+            </div>
+            <div class="record">
+                <p class="name">Player 10:</p> <span class="records">0</span>
+            </div>
+
+        </div>
+
+        <div class="m-container">
+            <canvas width=" 320" height="640" class="canvas">
+
+            </canvas>
+
+        </div>
+        <div class="right-container">
+            <p>Score: <span id="score">0</span></p>
+            <p>Lines: <span id="lines">0</span></p>
+            <p>Level: <span id="level">0</span></p>
+
+            <p>Next:</p>
+            <canvas width="128" height="128" class="next-canvas"></canvas>
+
+            <button class="button">Play</button>
+
+            <div>
+                <p>Enter - <span>Start game.</span></p>
+                <p>&uarr; - <span> Rotait figure.</span></p>
+                <p>&larr; , &rarr; - <span>Move figure.</span></p>
+                <p>Esc - <span>End game.</span></p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <p><span>©</span><span>2022</span></p><a href="https://github.com/M0rl0ck" class="footer-link">
+                <svg class="github">
+                    <use xlink:href="./assets/svg/sprite.svg#github"></use>
+                </svg>
+            </a>
+
+            <a href="https://rs.school/js-stage0/">
+                <p class="footer-link-rs"> </p>
+            </a>
+
+        </div>
+    </footer>
+    <script type="module" src="./assets/js/index.js"></script>
+</body>
+
+</html>
