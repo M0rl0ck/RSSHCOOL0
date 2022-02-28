@@ -14,10 +14,17 @@ body {
   display: flex;
 }
 
-.score {
+.records {
   width: 20%;
+  padding: 20px;
+  font-size: 24px;
 }
 
+.button-fild {
+  width: 25%;
+  padding: 20px;
+  font-size: 24px;
+}
 .game {
   width: 55%;
   /* height: 750px; */
