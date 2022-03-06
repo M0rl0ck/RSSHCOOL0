@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: blueviolet;
+  user-select: none;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+}
+
+.records {
+  width: 25%;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.moves-text {
+  display: inline-block;
+  min-width: 30%;
+  padding-left: 40px;
+  text-align: end;
+}
+
+.record {
+  display: inline-block;
+  min-width: 30%;
+  margin: 10px 0;
+}
+
+.button-fild {
+  width: 25%;
+  padding-left: 20px;
+  font-size: 24px;
+}
+.game {
+  width: 815px;
+  height: 650px;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  perspective: 2000px;
+}
+
+.container-cards {
+  position: relative;
+  border-style: solid;
+  border-color: blue;
+}
+
+.container-cards.disable {
+  position: static;
+}
+
+.cards {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-color: blue;
+  box-shadow: 7px 7px 5px blue;
+  transform-style: preserve-3d;
+  transition: all 0.7s;
+}
+
+.cards.rotate {
+  transform: rotateY(180deg);
+  box-shadow: -7px 7px 5px blue;
+}
+
+.cards.stack {
+  position: absolute;
+  right: -180px;
+  top: 10px;
+  transform: rotate(360deg);
+  transition: all 0.7s;
+}
+
+.stack {
+  transition: all 0.7s;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.cards-fild {
+  width: 170px;
+  height: 170px;
+  background-color: aqua;
+}
+
+.moves {
+  margin: 20px 0;
+}
+
+.button-play {
+  width: 200px;
+  height: 50px;
+  box-shadow: 3px 3px 2px;
+}
+
+.press-button {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 1px;
+}
+
+footer {
+  height: 80px;
+}
